@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  background-color: rgb(46, 42, 165);
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 26px;
+}
+
+.btns-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
