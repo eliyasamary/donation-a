@@ -1,17 +1,20 @@
 import Box from "@mui/material/Box";
-// import React from "react";
 import Button from "@mui/material/Button";
-// import { getAllDoantions } from "./HTTP/http.js";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
     <Box className="btns-container">
-      <Button variant="contained" className="root-btn">
-        Show All Donasions
-      </Button>
-      <Button variant="contained" className="root-btn">
-        Search Donation
-      </Button>
+      <Link to="/">
+        <Button variant="contained" className="root-btn">
+          Show All Donasions
+        </Button>
+      </Link>
+      <Link to="/:id">
+        <Button variant="contained" className="root-btn">
+          Find Donation
+        </Button>
+      </Link>
       <Button variant="contained" className="root-btn">
         Update Donation
       </Button>
