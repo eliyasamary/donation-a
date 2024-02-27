@@ -41,44 +41,58 @@ const SpecificDonation = () => {
   };
 
   return (
-    <Box className="donations-container">
-      <Box
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          gap: "70px",
-        }}
-      >
-        <form onSubmit={handleSubmit} className="form-container-row">
-          <Box>
-            <TextField
-              className="input-field"
-              label="Enter Donation ID"
-              value={id}
-              onChange={handleInputChange}
-            />
-          </Box>
-          <Box>
-            <Button type="submit" variant="contained" className="form-btn">
-              Submit
-            </Button>
-          </Box>
-        </form>
-        {donation && !notFound && (
-          <Box key={donation._id} className="donation">
-            <h3>Donor Name: {donation.donorName}</h3>
-            <p>Amount: {donation.amount}</p>
-            <p>Location: {donation.location}</p>
-          </Box>
-        )}
-        {notFound && (
-          <p>
-            s No donation was found matching the provided id. Please ensure the
-            name is entered correctly and try again.
-          </p>
-        )}{" "}
+    <Box className="flex-container-col">
+      <h1 className="body-title ">Find Donation By Id</h1>
+      <Box className="donations-container">
+        <Box
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <form onSubmit={handleSubmit} className="form-container-row">
+            <Box>
+              <TextField
+                className="input-field"
+                label="Enter Donation ID"
+                value={id}
+                onChange={handleInputChange}
+              />
+            </Box>
+            <Box>
+              <Button type="submit" variant="contained" className="form-btn">
+                Submit
+              </Button>
+            </Box>
+          </form>
+          {donation && !notFound && (
+            <>
+              <p
+                style={{
+                  marginTop: "50px",
+                  marginBottom: "50px",
+                  fontSize: "24px",
+                }}
+              >
+                Donation Found:
+              </p>
+              <Box key={donation._id} className="donation">
+                <h3>Donor Name: {donation.donorName}</h3>
+                <p>Donation ID: {donation._id}</p>
+                <p>Amount: {donation.amount}</p>
+                <p>Location: {donation.location}</p>
+              </Box>
+            </>
+          )}
+          {notFound && (
+            <p>
+              No donation was found matching the provided id. Please ensure the
+              name is entered correctly and try again.
+            </p>
+          )}{" "}
+        </Box>
       </Box>
     </Box>
   );

@@ -13,14 +13,18 @@ const AllDonations = () => {
   }, []);
 
   return (
-    <Box className="donations-container">
-      {donations.map((donation) => (
-        <Box key={donation._id} className="donation">
-          <h3>Donor Name: {donation.donorName}</h3>
-          <p>Amount: {donation.amount}</p>
-          <p>Location: {donation.location}</p>
-        </Box>
-      ))}
+    <Box className="flex-container-col">
+      <h1 className="body-title ">There Are {donations.length} Donations</h1>
+      <Box className="donations-container">
+        {donations.map((donation) => (
+          <Box key={donation._id} className="donation">
+            <h3>Donor Name: {donation.donorName}</h3>
+            <p>Donation ID: {donation._id}</p>
+            <p>Amount: {donation.amount}</p>
+            <p>Location: {donation.location}</p>
+          </Box>
+        ))}
+      </Box>
     </Box>
   );
 };
