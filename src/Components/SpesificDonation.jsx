@@ -8,12 +8,14 @@ const SpecificDonation = () => {
   const [id, setId] = React.useState("");
   const [donation, setDonation] = React.useState(null);
   const [notFound, setNotFound] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
   const handleInputChange = (event) => {
     setId(event.target.value);
   };
 
   const handleSearch = () => {
+    setLoading(true);
     getDoantion(id)
       .then((data) => {
         if (data) {
@@ -27,6 +29,9 @@ const SpecificDonation = () => {
       .catch((err) => {
         console.log(err);
         setNotFound(true);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -67,7 +72,8 @@ const SpecificDonation = () => {
               </Button>
             </Box>
           </form>
-          {donation && !notFound && (
+          {loading && <p>Loading...</p>}{" "}
+          {donation && !notFound && !loading && (
             <>
               <p
                 style={{
@@ -86,12 +92,12 @@ const SpecificDonation = () => {
               </Box>
             </>
           )}
-          {notFound && (
+          {notFound && !loading && (
             <p>
               No donation was found matching the provided id. Please ensure the
               name is entered correctly and try again.
             </p>
-          )}{" "}
+          )}
         </Box>
       </Box>
     </Box>
