@@ -1,13 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Root from "./Routes/router.jsx";
+import App from "./App.jsx";
+import SpecificDonation from "./Components/SpesificDonation.jsx";
+import AllDonations from "./Components/AllDonations.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <AllDonations />,
+      },
+      {
+        path: "/:id",
+        element: <SpecificDonation />,
+      },
+    ],
   },
 ]);
 
