@@ -6,12 +6,12 @@ import "../App.css";
 const Navigation = () => {
   return (
     <Box className="btns-container">
-      <Link to="/">
+      <Link to="/" className="link-btn">
         <Button variant="contained" className="root-btn">
           Show All Donasions
         </Button>
       </Link>
-      <Link to="/:id">
+      <Link to="/:id" className="link-btn">
         <Button variant="contained" className="root-btn">
           Find Donation
         </Button>

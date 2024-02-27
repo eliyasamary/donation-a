@@ -13,3 +13,7 @@
   margin: 10px !important;
   background-color: rgb(46, 42, 165) !important;
 }
+
+.link-btn :hover {
+  opacity: 0.6;
+}
