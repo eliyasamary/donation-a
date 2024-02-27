@@ -19,4 +19,25 @@ const getDoantion = async (id) => {
   return response.data;
 };
 
-export { getAllDoantions, getDoantion };
+const createDoantion = async (data) => {
+  const response = await http.post("/donations", data);
+  return response.data;
+};
+
+const updateDoantion = async (id, data) => {
+  const response = await http.put("/donations/" + id, data);
+  return response.data;
+};
+
+const deleteDoantion = async (id) => {
+  const response = await http.delete("/donations/" + id);
+  return response.data;
+};
+
+export {
+  getAllDoantions,
+  getDoantion,
+  createDoantion,
+  updateDoantion,
+  deleteDoantion,
+};
