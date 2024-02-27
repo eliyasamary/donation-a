@@ -2,15 +2,27 @@ import React from "react";
 import "../CSS/style.css";
 import Box from "@mui/material/Box";
 import { getAllDoantions } from "../HTTP/http";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const AllDonations = () => {
   const [donations, setDonations] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     getAllDoantions()
-      .then((data) => setDonations(data))
-      .catch((err) => console.log(err));
+      .then((data) => {
+        setDonations(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <ClipLoader color="rgb(46, 42, 165)" />;
+  }
 
   return (
     <Box className="flex-container-col">

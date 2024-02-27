@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { getDoantion } from "../HTTP/http.js";
+import ClipLoader from "react-spinners/ClipLoader";
 
 const SpecificDonation = () => {
   const [id, setId] = React.useState("");
@@ -72,7 +73,7 @@ const SpecificDonation = () => {
               </Button>
             </Box>
           </form>
-          {loading && <p>Loading...</p>}{" "}
+          {loading && <ClipLoader color="rgb(46, 42, 165)" />}{" "}
           {donation && !notFound && !loading && (
             <>
               <p
