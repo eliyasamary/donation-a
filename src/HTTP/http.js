@@ -14,4 +14,9 @@ const getAllDoantions = async () => {
   return response.data;
 };
 
-export { getAllDoantions };
+const getDoantion = async (id) => {
+  const response = await http.get("/donations/" + id);
+  return response.data;
+};
+
+export { getAllDoantions, getDoantion };
