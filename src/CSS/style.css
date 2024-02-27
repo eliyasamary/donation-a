@@ -20,6 +20,17 @@
   align-items: center;
 }
 
+.modify-btn {
+  width: 100px;
+  height: 50px;
+  background-color: rgb(46, 42, 165) !important;
+  color: aliceblue !important;
+}
+
+.modify-btn:hover {
+  opacity: 0.6;
+}
+
 .pacifico-regular {
   font-family: "Pacifico", cursive;
   font-weight: 400;
@@ -91,6 +102,9 @@
   height: 50px;
   margin: 10px !important;
   background-color: rgb(46, 42, 165) !important;
+}
+.btn-wrapper :hover {
+  opacity: 0.6;
 }
 
 .body-title {

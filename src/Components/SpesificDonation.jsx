@@ -67,19 +67,19 @@ const SpecificDonation = () => {
                 onChange={handleInputChange}
               />
             </Box>
-            <Box>
+            <Box className="btn-wrapper">
               <Button type="submit" variant="contained" className="form-btn">
-                Submit
+                Find
               </Button>
             </Box>
           </form>
           {loading && <ClipLoader color="rgb(46, 42, 165)" />}{" "}
           {donation && !notFound && !loading && (
-            <>
+            <Box className="flex-container-col">
               <p
                 style={{
-                  marginTop: "50px",
-                  marginBottom: "50px",
+                  marginTop: "20px",
+                  marginBottom: "20px",
                   fontSize: "24px",
                 }}
               >
@@ -91,7 +91,11 @@ const SpecificDonation = () => {
                 <p>Amount: {donation.amount}</p>
                 <p>Location: {donation.location}</p>
               </Box>
-            </>
+              <Box style={{ display: "flex", gap: "30px" }}>
+                <Button className="modify-btn">Edit</Button>
+                <Button className="modify-btn">Delete</Button>
+              </Box>
+            </Box>
           )}
           {notFound && !loading && (
             <p>
