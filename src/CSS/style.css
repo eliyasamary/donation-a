@@ -25,3 +25,23 @@
   font-weight: 400;
   font-style: normal;
 }
+
+.donations-container {
+  width: 100%;
+  height: 100%;
+  /* background-color: aqua; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.donation {
+  width: 300px;
+  height: 150px;
+  background-color: rgb(247, 250, 250);
+  border-radius: 20px;
+  padding: 10px;
+  /* margin: 10px; */
+}
