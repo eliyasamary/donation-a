@@ -5,6 +5,8 @@ import Button from "@mui/material/Button";
 import { getDonation, updateDonation, deleteDonation } from "../HTTP/http.js";
 import ClipLoader from "react-spinners/ClipLoader";
 import "../CSS/style.css";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 
 const SpecificDonation = () => {
   const [id, setId] = useState("");
@@ -80,7 +82,7 @@ const SpecificDonation = () => {
       .then(() => {
         setDonation(editedDonation);
         setIsEditing(false);
-        setSuccessMessage("Donation updated successfully");
+        setSuccessMessage("Donation updated successfully !");
       })
       .catch((err) => console.log(err));
   };
@@ -92,7 +94,7 @@ const SpecificDonation = () => {
   const handleConfirmDelete = () => {
     deleteDonation(id)
       .then(() => {
-        setSuccessMessage("Donation deleted successfully");
+        setSuccessMessage("Donation deleted successfully !");
         setDonation(null);
         setId("");
       })
@@ -143,9 +145,11 @@ const SpecificDonation = () => {
                 </Box>
                 <Box style={{ display: "flex", gap: "30px" }}>
                   <Button className="modify-btn" onClick={handleEdit}>
+                    <EditIcon />
                     Edit
                   </Button>
                   <Button className="modify-btn" onClick={handleDelete}>
+                    <DeleteIcon />
                     Delete
                   </Button>
                 </Box>
@@ -175,9 +179,11 @@ const SpecificDonation = () => {
                 value={editedDonation.location}
                 onChange={handleEditChange}
               />
-              <Button type="submit" variant="contained" className="form-btn">
-                Save
-              </Button>
+              <div className="btn-wrapper">
+                <Button type="submit" variant="contained" className="form-btn">
+                  Save
+                </Button>
+              </div>
             </form>
           )}
           {notFound && !loading && (
@@ -188,12 +194,14 @@ const SpecificDonation = () => {
           )}
           {successMessage && (
             <div>
-              <p>{successMessage}</p>
+              <p className="successMessage">{successMessage}</p>
             </div>
           )}
           {deleteConfirmation && (
             <div className="pop-up">
-              <p>Are you sure you want to delete this donation?</p>
+              <p className="successMessage">
+                Are you sure you want to delete this donation?
+              </p>
               <div className="form-container-row">
                 <div className="btn-wrapper">
                   <Button onClick={handleConfirmDelete} className="form-btn">
