@@ -102,6 +102,7 @@
   height: 50px;
   margin: 10px !important;
   background-color: rgb(46, 42, 165) !important;
+  color: #ffffff !important;
 }
 .btn-wrapper :hover {
   opacity: 0.6;
@@ -109,4 +110,20 @@
 
 .body-title {
   font-size: 32px;
+}
+
+.pop-up {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 20px;
+  /* border: 1px solid #000000; */
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
