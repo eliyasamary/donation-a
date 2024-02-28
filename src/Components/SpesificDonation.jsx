@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import { getDoantion, updateDoantion, deleteDoantion } from "../HTTP/http.js";
+import { getDonation, updateDonation, deleteDonation } from "../HTTP/http.js";
 import ClipLoader from "react-spinners/ClipLoader";
+import "../CSS/style.css";
 
 const SpecificDonation = () => {
   const [id, setId] = useState("");
@@ -31,7 +32,7 @@ const SpecificDonation = () => {
 
   const handleSearch = () => {
     setLoading(true);
-    getDoantion(id)
+    getDonation(id)
       .then((data) => {
         if (data) {
           setDonation(data);
@@ -75,7 +76,7 @@ const SpecificDonation = () => {
 
   const handleEditSubmit = (event) => {
     event.preventDefault();
-    updateDoantion(editedDonation)
+    updateDonation(editedDonation)
       .then(() => {
         setDonation(editedDonation);
         setIsEditing(false);
@@ -89,7 +90,7 @@ const SpecificDonation = () => {
   };
 
   const handleConfirmDelete = () => {
-    deleteDoantion(id)
+    deleteDonation(id)
       .then(() => {
         setSuccessMessage("Donation deleted successfully");
         setDonation(null);
@@ -104,7 +105,7 @@ const SpecificDonation = () => {
   };
 
   return (
-    <Box className="flex-container-col">
+    <Box className="flex-container-col-secondary">
       <h1 className="body-title ">Find Donation By Id</h1>
       <Box className="donations-container">
         <Box
@@ -133,16 +134,7 @@ const SpecificDonation = () => {
           {loading && <ClipLoader color="rgb(46, 42, 165)" />}{" "}
           {donation && !notFound && !loading && !isEditing && (
             <>
-              <Box className="flex-container-col">
-                <p
-                  style={{
-                    marginTop: "20px",
-                    marginBottom: "20px",
-                    fontSize: "24px",
-                  }}
-                >
-                  Donation Found:
-                </p>
+              <Box className="flex-container-col" style={{ marginTop: "20px" }}>
                 <Box key={donation._id} className="donation">
                   <h3>Donor Name: {donation.donorName}</h3>
                   <p>Donation ID: {donation._id}</p>
@@ -195,7 +187,7 @@ const SpecificDonation = () => {
             </p>
           )}
           {successMessage && (
-            <div className="pop-up">
+            <div>
               <p>{successMessage}</p>
             </div>
           )}
