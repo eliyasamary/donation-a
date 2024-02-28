@@ -20,6 +20,11 @@ const router = createBrowserRouter([
         exact: true,
       },
       {
+        path: "/",
+        element: <AllDonations />,
+        exact: true,
+      },
+      {
         path: "/item",
         element: <SpecificDonation />,
         exact: true,
