@@ -10,7 +10,7 @@
   width: 200px;
   height: 50px;
   margin: 10px !important;
-  background-color: rgb(46, 42, 165) !important;
+  background: linear-gradient(0.25turn, #747bff, #8f94fa);
 }
 
 .link-btn :hover {
