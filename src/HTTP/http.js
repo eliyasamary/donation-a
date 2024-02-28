@@ -24,8 +24,9 @@ const createDoantion = async (data) => {
   return response.data;
 };
 
-const updateDoantion = async (id, data) => {
-  const response = await http.put("/donations/" + id, data);
+const updateDoantion = async (data) => {
+  console.log(data);
+  const response = await http.put("/donations/" + data._id, data);
   return response.data;
 };
 
