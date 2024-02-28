@@ -198,20 +198,22 @@ const SpecificDonation = () => {
             </div>
           )}
           {deleteConfirmation && (
-            <div className="pop-up">
-              <p className="successMessage">
-                Are you sure you want to delete this donation?
-              </p>
-              <div className="form-container-row">
-                <div className="btn-wrapper">
-                  <Button onClick={handleConfirmDelete} className="form-btn">
-                    Yes
-                  </Button>
-                </div>
-                <div className="btn-wrapper">
-                  <Button onClick={handleCancelDelete} className="form-btn">
-                    No
-                  </Button>
+            <div className="pop-up-overlay">
+              <div className="pop-up">
+                <p className="successMessage">
+                  Are you sure you want to delete this donation?
+                </p>
+                <div className="form-container-row">
+                  <div className="btn-wrapper">
+                    <Button onClick={handleConfirmDelete} className="form-btn">
+                      Yes
+                    </Button>
+                  </div>
+                  <div className="btn-wrapper">
+                    <Button onClick={handleCancelDelete} className="form-btn">
+                      No
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
