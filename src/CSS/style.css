@@ -39,18 +39,26 @@
 
 .donations-container {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   margin-top: 20px;
+  background-color: #747bff;
+  padding: 20px;
 }
 
 .flex-container-col {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-container-col-secondary {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
