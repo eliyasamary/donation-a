@@ -36,7 +36,7 @@ const NewDonation = () => {
     event.preventDefault();
     createDonation(donationData)
       .then(() => {
-        setSuccessMessage("Donation created successfully");
+        setSuccessMessage("Donation created successfully !");
         setDonationData({
           donorName: "",
           amount: "",
@@ -85,7 +85,7 @@ const NewDonation = () => {
       </form>
       {successMessage && (
         <div>
-          <p>{successMessage}</p>
+          <p className="successMessage">{successMessage}</p>
         </div>
       )}
       {error && <p className="error-message">{error}</p>}
