@@ -1,7 +1,7 @@
 import React from "react";
 import "../CSS/style.css";
 import Box from "@mui/material/Box";
-import { getAllDoantions } from "../HTTP/http";
+import { getAllDonations } from "../HTTP/http";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const AllDonations = () => {
@@ -9,7 +9,7 @@ const AllDonations = () => {
   const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
-    getAllDoantions()
+    getAllDonations()
       .then((data) => {
         setDonations(data);
         setLoading(false);
