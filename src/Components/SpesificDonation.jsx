@@ -136,6 +136,9 @@ const SpecificDonation = () => {
           {loading && <ClipLoader color="rgb(46, 42, 165)" />}{" "}
           {donation && !notFound && !loading && !isEditing && (
             <>
+              <span className="successMessage" style={{ marginTop: "10px" }}>
+                Found Donation:
+              </span>
               <Box className="flex-container-col" style={{ marginTop: "20px" }}>
                 <Box key={donation._id} className="donation">
                   <h3>Donor Name: {donation.donorName}</h3>
