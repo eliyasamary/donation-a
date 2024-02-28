@@ -2,6 +2,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "../App.css";
+import "../CSS/style.css";
 
 const Navigation = () => {
   return (
@@ -16,9 +17,11 @@ const Navigation = () => {
           Find Donation
         </Button>
       </Link>
-      <Button variant="contained" className="root-btn">
-        New Donation
-      </Button>
+      <Link to="/new" className="link-btn">
+        <Button variant="contained" className="root-btn">
+          New Donation
+        </Button>
+      </Link>
     </Box>
   );
 };
