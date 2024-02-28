@@ -9,36 +9,36 @@ export const http = axios.create({
   },
 });
 
-const getAllDoantions = async () => {
+const getAllDonations = async () => {
   const response = await http.get("/donations");
   return response.data;
 };
 
-const getDoantion = async (id) => {
+const getDonation = async (id) => {
   const response = await http.get("/donations/" + id);
   return response.data;
 };
 
-const createDoantion = async (data) => {
+const createDonation = async (data) => {
   const response = await http.post("/donations", data);
   return response.data;
 };
 
-const updateDoantion = async (data) => {
+const updateDonation = async (data) => {
   console.log(data);
   const response = await http.put("/donations/" + data._id, data);
   return response.data;
 };
 
-const deleteDoantion = async (id) => {
+const deleteDonation = async (id) => {
   const response = await http.delete("/donations/" + id);
   return response.data;
 };
 
 export {
-  getAllDoantions,
-  getDoantion,
-  createDoantion,
-  updateDoantion,
-  deleteDoantion,
+  getAllDonations,
+  getDonation,
+  createDonation,
+  updateDonation,
+  deleteDonation,
 };
