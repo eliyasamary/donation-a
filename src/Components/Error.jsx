@@ -11,7 +11,7 @@ const Error = () => {
       <h2 className="text-primary">
         Seems like you have taken a wrong turn ...
       </h2>
-      <a href="/allItems" className="text-secondary">
+      <a href="/allItems" id="error-back-btn" className="body-title">
         Click On Me to find your way back!
       </a>
     </Box>
