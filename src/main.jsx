@@ -4,6 +4,7 @@ import App from "./App.jsx";
 import SpecificDonation from "./Components/SpesificDonation.jsx";
 import NewDonation from "./Components/NewDonation.jsx";
 import AllDonations from "./Components/AllDonations.jsx";
+import Error from "./Components/Error.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -11,18 +12,22 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <Error />,
     children: [
       {
-        path: "/",
+        path: "/allItems",
         element: <AllDonations />,
+        exact: true,
       },
       {
-        path: "/:id",
+        path: "/item",
         element: <SpecificDonation />,
+        exact: true,
       },
       {
-        path: "/new",
+        path: "/newItem",
         element: <NewDonation />,
+        exact: true,
       },
     ],
   },
