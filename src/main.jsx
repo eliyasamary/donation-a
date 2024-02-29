@@ -4,7 +4,7 @@ import App from "./App.jsx";
 import SpecificDonation from "./Components/SpesificDonation.jsx";
 import NewDonation from "./Components/NewDonation.jsx";
 import AllDonations from "./Components/AllDonations.jsx";
-import Error from "./Components/Error.jsx";
+import ErrorNotFound from "./Components/ErrorNotFound404.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <Error />,
+    errorElement: <ErrorNotFound />,
     children: [
       {
         path: "/allItems",
