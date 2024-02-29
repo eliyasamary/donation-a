@@ -10,29 +10,49 @@ export const http = axios.create({
 });
 
 const getAllDonations = async () => {
-  const response = await http.get("/donations");
-  return response.data;
+  try {
+    const response = await http.get("/donations");
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred while fetching data:", error);
+  }
 };
 
 const getDonation = async (id) => {
-  const response = await http.get("/donations/" + id);
-  return response.data;
+  try {
+    const response = await http.get("/donations/" + id);
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred while fetching data:", error);
+  }
 };
 
 const createDonation = async (data) => {
-  const response = await http.post("/donations", data);
-  return response.data;
+  try {
+    const response = await http.post("/donations", data);
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred while fetching data:", error);
+  }
 };
 
 const updateDonation = async (data) => {
-  console.log(data);
-  const response = await http.put("/donations/" + data._id, data);
-  return response.data;
+  try {
+    console.log(data);
+    const response = await http.put("/donations/" + data._id, data);
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred while fetching data:", error);
+  }
 };
 
 const deleteDonation = async (id) => {
-  const response = await http.delete("/donations/" + id);
-  return response.data;
+  try {
+    const response = await http.delete("/donations/" + id);
+    return response.data;
+  } catch (error) {
+    console.error("An error occurred while fetching data:", error);
+  }
 };
 
 export {
